@@ -1,0 +1,8 @@
+# https://github.com/hhatto/autopep8#pyproject-toml
+
+[tool.autopep8]
+max_line_length = 420
+ignore = "E301,E302"  # https://pypi.org/project/autopep8/#features
+in-place = true
+recursive = true
+aggressive = 3

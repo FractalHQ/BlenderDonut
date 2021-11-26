@@ -1,0 +1,4 @@
+{
+  "python.pythonPath": "/usr/local/anaconda3/bin/python",
+  "python.formatting.autopep8Args": ["--max-line-length=200"]
+}
