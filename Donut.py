@@ -116,16 +116,9 @@ RIP()
 #! FIXME: Remove these when done.
 
 def removeTexturesAndMaterials():
-	# Remove all textures
 	for texture in bpy.data.textures:
-		if texture.users is not None:
-			texture.user_clear()
 		bpy.data.textures.remove(texture)
-
-	# Remove all materials
 	for material in bpy.data.materials:
-		if material.users is not None:
-			material.user_clear()
 		bpy.data.materials.remove(material)
 removeTexturesAndMaterials()
 
@@ -330,9 +323,12 @@ icingMaterial()
 # * Camera
 # bpy.ops.object.camera_add(enter_editmode=False, align='VIEW', location=(0, 0, 0), rotation=(1.63363, 4.13058e-07, -1.38929), scale=(1, 1, 1))
 
+
+
 ##?
 ##? Donut
 ##?
+
 
 # Deselect all
 bpy.ops.object.select_all(action='DESELECT')
@@ -344,6 +340,8 @@ def donutDisplace():
 	displace = Donut.modifiers.new(name='DonutDisplace', type='DISPLACE')
 	displace.strength = 0.02
 	texture = bpy.data.textures.new("DonutDisplaceTexture", type='STUCCI')
+	texture.size = 0.06
+	texture.turbulence = 145.00
 	displace.texture = texture
 donutDisplace()
 
